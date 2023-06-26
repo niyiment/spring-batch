@@ -19,7 +19,7 @@ public class DatabaseSeed implements CommandLineRunner {
     public void run(String... args) {
         List<Person> people = new ArrayList<>();
         Faker faker = new Faker();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 50; i++) {
             Person person = Person.builder()
                     .firstName(faker.name().firstName())
                     .lastName(faker.name().lastName())

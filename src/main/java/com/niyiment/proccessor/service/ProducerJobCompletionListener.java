@@ -14,13 +14,13 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class JobCompletionListener implements JobExecutionListener {
+public class ProducerJobCompletionListener implements JobExecutionListener {
     private final PersonRepository repository;
 
     @Override
     public void afterJob(JobExecution jobExecution) {
         if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
-            log.info("Batch completed successfully");
+            log.info("Batch export completed successfully");
 
             List<Person> people = repository.findAll();
             people.forEach(person -> log.info("Records in database: {}", person));

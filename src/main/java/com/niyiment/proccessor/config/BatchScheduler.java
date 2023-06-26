@@ -18,18 +18,18 @@ public class BatchScheduler {
     private final Job job;
     private final JobLauncher jobLauncher;
 
-    @Scheduled(cron = "*/20 * * * * *")
-    public void init(){
-        try{
-            JobExecution execution = jobLauncher.run(job,
-                    new JobParametersBuilder()
-                            .addLong("current_time", System.currentTimeMillis())
-                            .toJobParameters()
-            );
-            log.info("Current job status: " + execution.getStatus());
-        } catch (Exception exception) {
-            log.error("Error: {}", exception.getMessage());
-        }
-    }
+//    @Scheduled(cron = "*/20 * * * * *")
+//    public void init(){
+//        try{
+//            JobExecution execution = jobLauncher.run(job,
+//                    new JobParametersBuilder()
+//                            .addLong("current_time", System.currentTimeMillis())
+//                            .toJobParameters()
+//            );
+//            log.info("Current job status: " + execution.getStatus());
+//        } catch (Exception exception) {
+//            log.error("Error: {}", exception.getMessage());
+//        }
+//    }
 
 }
